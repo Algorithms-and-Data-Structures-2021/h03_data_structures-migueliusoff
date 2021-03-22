@@ -39,6 +39,9 @@ namespace itis {
         if (!front_){
             back_ = nullptr;
         }
+        if (front_){
+            front_->previous = nullptr;
+        }
         size_--;
         delete node;
     }
