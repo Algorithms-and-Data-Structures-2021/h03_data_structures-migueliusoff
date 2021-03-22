@@ -34,16 +34,18 @@ namespace itis {
         if (size_ == 0) {
             throw std::logic_error("cannot not dequeue from empty queue");
         }
-        auto node = front_;
-        front_ = front_->next;
-        if (!front_){
+        if (size_ == 1){
+            delete front_;
+            front_ = nullptr;
             back_ = nullptr;
         }
-        if (front_){
+        else {
+            auto node = front_;
+            front_ = front_->next;
             front_->previous = nullptr;
+            delete node;
         }
         size_--;
-        delete node;
     }
 
     void LinkedDequeue::DequeueBack() {
