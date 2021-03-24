@@ -29,6 +29,7 @@ namespace itis {
         }
         if (size_ == 0){
             data_ = new Element[kDefaultCapacity];
+            capacity_ = kDefaultCapacity;
         }
         data_[size_++] = e;
     }
