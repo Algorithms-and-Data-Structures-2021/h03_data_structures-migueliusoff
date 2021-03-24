@@ -33,6 +33,7 @@ namespace itis {
         data_[size_++] = e;
     }
 
+
     void ArrayStack::Pop() {
         if (size_ == 0) {
             throw std::logic_error("cannot pop out from empty stack");
