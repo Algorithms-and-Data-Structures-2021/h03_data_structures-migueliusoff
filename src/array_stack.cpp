@@ -27,6 +27,11 @@ namespace itis {
         if (size_ == capacity_){
             resize(capacity_ + kCapacityGrowthCoefficient);
         }
+        if (size_ == 0){
+            delete[]  data_;
+            data_ = new Element[kDefaultCapacity];
+            capacity_ = kDefaultCapacity;
+        }
         data_[size_++] = e;
     }
 
